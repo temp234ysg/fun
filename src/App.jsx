@@ -4,7 +4,7 @@ import VideoPlayer from "./VideoPlayer";
 
 export default function App() {
   const [paid, setPaid] = useState(false);
-  const userName = "John Doe"; // You can replace this with any dynamic value
+  const userName = "User"; // You can replace this with any dynamic value
 
   return (
     <div className="app-container" style={{width: '100vw', height:'100vh', margin: 'auto'}}>
