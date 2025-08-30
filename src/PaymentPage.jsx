@@ -52,6 +52,8 @@ export default function PaymentPage({ userName, onPay }) {
     onPay(); // Call the parent onPay function to handle the actual payment
   };
 
+  const isDisabled = !selectedMethod || selectedMethod === "paylater";
+
   return (
     <div className="payment-page-container">
       <div className="payment-page-content">
@@ -131,21 +133,21 @@ export default function PaymentPage({ userName, onPay }) {
 
           {/* Pay button */}
           <button
-            disabled={!selectedMethod || selectedMethod === "paylater"}
-            style={{
-              backgroundColor: selectedMethod ? "#0070f3" : "#ccc",
-              color: "white",
-              width: "100%",
-              padding: "14px 0",
-              fontSize: 18,
-              border: "none",
-              borderRadius: 6,
-              cursor: selectedMethod ? "pointer" : "not-allowed",
-            }}
-            onClick={handlePay}
-          >
-            Pay {price}
-          </button>
+  disabled={isDisabled}
+  style={{
+    backgroundColor: isDisabled ? "#ccc" : "#0070f3",
+    color: "white",
+    width: "100%",
+    padding: "14px 0",
+    fontSize: 18,
+    border: "none",
+    borderRadius: 6,
+    cursor: isDisabled ? "not-allowed" : "pointer",
+  }}
+  onClick={handlePay}
+>
+  Pay {price}
+</button>
         </div>
 
         {/* Right side - tutorial summary */}
