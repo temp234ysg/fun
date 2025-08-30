@@ -131,7 +131,7 @@ export default function PaymentPage({ userName, onPay }) {
 
           {/* Pay button */}
           <button
-            disabled={!selectedMethod}
+            disabled={!selectedMethod || selectedMethod === "paylater"}
             style={{
               backgroundColor: selectedMethod ? "#0070f3" : "#ccc",
               color: "white",
