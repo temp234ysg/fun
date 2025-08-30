@@ -171,30 +171,68 @@ export default function PaymentPage({ userName, onPay }) {
 
       {/* Modal for the message */}
       {showMessage && (
-        <div className="popup-modal">
-          <div className="popup-content">
-            <p style={{ fontSize: "20px", textAlign: "center", color: "#ff0000", fontWeight: "bold" }}>
-              Do you really think I will charge for this? 😈  Yes, I'll!
-            </p>
-            <button
-              style={{
-                padding: "10px 20px",
-                fontSize: "16px",
-                backgroundColor: "#0070f3",
-                color: "white",
-                border: "none",
-                borderRadius: "5px",
-                cursor: "pointer",
-                display: "block",
-                margin: "20px auto",
-              }}
-              onClick={handleContinue}
-            >
-              Continue
-            </button>
-          </div>
-        </div>
-      )}
+  <div 
+    className="popup-modal"
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0,0,0,0.5)", // dimmed background
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 1000,
+    }}
+  >
+    <div 
+      className="popup-content"
+      style={{
+        background: "white",
+        borderRadius: "12px",
+        padding: "30px 25px",
+        maxWidth: "400px",
+        width: "90%",
+        textAlign: "center",
+        boxShadow: "0 6px 20px rgba(0,0,0,0.2)",
+        animation: "fadeIn 0.3s ease-in-out",
+      }}
+    >
+      <p 
+        style={{
+          fontSize: "18px",
+          color: "#333",
+          fontWeight: "600",
+          lineHeight: "1.5",
+          marginBottom: "20px",
+        }}
+      >
+        Do you really think I will charge for this? 😈 <br />
+        <span style={{ color: "#ff0000" }}>Yes, I will!</span>
+      </p>
+      
+      <button
+        style={{
+          padding: "12px 24px",
+          fontSize: "16px",
+          backgroundColor: "black",
+          color: "white",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          transition: "all 0.2s ease",
+        }}
+        onMouseOver={(e) => (e.target.style.opacity = "0.85")}
+        onMouseOut={(e) => (e.target.style.opacity = "1")}
+        onClick={handleContinue}
+      >
+        Continue
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
