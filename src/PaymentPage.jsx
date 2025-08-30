@@ -3,6 +3,7 @@ import './PaymentPage.css';
 
 // Import the sad sound from the src/assets folder
 import sadSoundFile from './assets/sad-sound.mp3';
+import upiImg from './assets/UPI-White.svg';
 
 // Define the payment methods
 const paymentMethods = [
@@ -81,7 +82,7 @@ export default function PaymentPage({ userName, onPay }) {
           >
             {/* UPI Image */}
             <img
-              src="./src/assets/UPI-White.svg" // Path to your SVG file in the assets folder
+              src={upiImg} // Path to your SVG file in the assets folder
               alt="UPI"
               style={{ width: "70px", height: "40px" }}
             />
@@ -121,12 +122,12 @@ export default function PaymentPage({ userName, onPay }) {
           </div>
 
           {/* Personal info */}
-          <div style={{ marginBottom: 20 }}>
+{/*           <div style={{ marginBottom: 20 }}>
             <strong>Personal information</strong>
             <p style={{ marginTop: 5, color: "#555" }}>
               {userName}, {userName.toLowerCase().replace(" ", ".")}@example.com
             </p>
-          </div>
+          </div> */}
 
           {/* Pay button */}
           <button
